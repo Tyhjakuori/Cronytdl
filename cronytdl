@@ -4,7 +4,7 @@
 channelname1=Insert channel name here
 channelid1=Insert channel id here
 cd ~/Videos/$channelname1/
-youtube-dl -f bestvideo+bestaudio --download-archive ~/Videos/$channelname1/.$channelname1 --merge-output-format mkv https://www.youtube.com/channel/$channelid1 || $(
+yt-dlp -f bestvideo+bestaudio --download-archive ~/Videos/$channelname1/.$channelname1 --merge-output-format mkv https://www.youtube.com/channel/$channelid1 || $(
 curl https://www.youtube.com/feeds/videos.xml?channel_id=$channelid1 | grep yt:videoId | sed -e 's/<\/*yt:videoId>//g' -e 's/ //g' > .ids.txt
 find * | sed 's/....$//g' | grep -o '.\{11\}$' > .local.txt
 missing=$(comm -23 <(sort .ids.txt) <(sort .local.txt))
@@ -12,7 +12,7 @@ for dlvideo in $missing; do
 	ytdl -a -o audio $dlvideo
 	ytdl -b -o video $dlvideo
 	ffmpeg -i video.mp4 -i audio.mp4 -c:v copy -c:a copy output.mp4
-	title=$(youtube-dl -e $dlvideo | sed -e 's/ /_/g' -e 's/\///g')
+	title=$(yt-dlp -e $dlvideo | sed -e 's/ /_/g' -e 's/\///g')
 	mv output.mp4 $title-$dlvideo.mp4
 	rm video.mp4 && rm audio.mp4
 	echo "youtube $dlvideo" >> .$channelname1
@@ -20,7 +20,7 @@ done
 rm .ids.txt && rm .local.txt)
 
 channelid2=Insert channel id here
-youtube-dl -f bestvideo+bestaudio --download-archive ~/Videos/$channelname1/.$channelname1 --merge-output-format mkv https://www.youtube.com/channel/$channelid2 || $(
+yt-dlp -f bestvideo+bestaudio --download-archive ~/Videos/$channelname1/.$channelname1 --merge-output-format mkv https://www.youtube.com/channel/$channelid2 || $(
 curl https://www.youtube.com/feeds/videos.xml?channel_id=$channelid2 | grep yt:videoId | sed -e 's/<\/*yt:videoId>//g' -e 's/ //g' > .ids.txt
 find * | sed 's/....$//g' | grep -o '.\{11\}$' > .local.txt
 missing=$(comm -23 <(sort .ids.txt) <(sort .local.txt))
@@ -28,7 +28,7 @@ for dlvideo in $missing; do
 	ytdl -a -o audio $dlvideo
 	ytdl -b -o video $dlvideo
 	ffmpeg -i video.mp4 -i audio.mp4 -c:v copy -c:a copy output.mp4
-	title=$(youtube-dl -e $dlvideo | sed -e 's/ /_/g' -e 's/\///g')
+	title=$(yt-dlp -e $dlvideo | sed -e 's/ /_/g' -e 's/\///g')
 	mv output.mp4 $title-$dlvideo.mp4
 	rm video.mp4 && rm audio.mp4
 	echo "youtube $dlvideo" >> .$channelname1
@@ -40,7 +40,7 @@ rm .ids.txt && rm .local.txt)
 channelname2=Insert channel name here
 channelid3=Insert channel id here
 cd ~/Videos/$channelname2/
-youtube-dl -f bestvideo+bestaudio --download-archive ~/Videos/$channelname2/.$channelname2 --merge-output-format mkv https://www.youtube.com/channel/$channelid3 || $(
+yt-dlp -f bestvideo+bestaudio --download-archive ~/Videos/$channelname2/.$channelname2 --merge-output-format mkv https://www.youtube.com/channel/$channelid3 || $(
 curl https://www.youtube.com/feeds/videos.xml?channel_id=$channelid3 | grep yt:videoId | sed -e 's/<\/*yt:videoId>//g' -e 's/ //g' > .ids.txt
 find * | sed 's/....$//g' | grep -o '.\{11\}$' > .local.txt
 missing=$(comm -23 <(sort .ids.txt) <(sort .local.txt))
@@ -48,7 +48,7 @@ for dlvideo in $missing; do
 	ytdl -a -o audio $dlvideo
 	ytdl -b -o video $dlvideo
 	ffmpeg -i video.mp4 -i audio.mp4 -c:v copy -c:a copy output.mp4
-	title=$(youtube-dl -e $dlvideo | sed -e 's/ /_/g' -e 's/\///g')
+	title=$(yt-dlp -e $dlvideo | sed -e 's/ /_/g' -e 's/\///g')
 	mv output.mp4 $title-$dlvideo.mp4
 	rm video.mp4 && rm audio.mp4
 	echo "youtube $dlvideo" >> .$channelname2
@@ -60,7 +60,7 @@ rm .ids.txt && rm .local.txt)
 channelname3=Insert channel name here
 channelid4=Insert channel id here
 cd ~/Videos/$channelname3/
-youtube-dl -f bestvideo+bestaudio --download-archive ~/Videos/$channelname3/.$channelname3 --merge-output-format mkv https://www.youtube.com/channel/$channelid4 || $(
+yt-dlp -f bestvideo+bestaudio --download-archive ~/Videos/$channelname3/.$channelname3 --merge-output-format mkv https://www.youtube.com/channel/$channelid4 || $(
 curl https://www.youtube.com/feeds/videos.xml?channel_id=$channelid4 | grep yt:videoId | sed -e 's/<\/*yt:videoId>//g' -e 's/ //g' > .ids.txt
 find * | sed 's/....$//g' | grep -o '.\{11\}$' > .local.txt
 missing=$(comm -23 <(sort .ids.txt) <(sort .local.txt))
@@ -68,7 +68,7 @@ for dlvideo in $missing; do
 	ytdl -a -o audio $dlvideo
 	ytdl -b -o video $dlvideo
 	ffmpeg -i video.mp4 -i audio.mp4 -c:v copy -c:a copy output.mp4
-	title=$(youtube-dl -e $dlvideo | sed -e 's/ /_/g' -e 's/\///g')
+	title=$(yt-dlp -e $dlvideo | sed -e 's/ /_/g' -e 's/\///g')
 	mv output.mp4 $title-$dlvideo.mp4
 	rm video.mp4 && rm audio.mp4
 	echo "youtube $dlvideo" >> .$channelname3
@@ -80,7 +80,7 @@ rm .ids.txt && rm .local.txt)
 channelname4=Insert channel name here
 channelid5=Insert channel id here
 cd ~/Videos/$channelname4/
-youtube-dl -f bestvideo+bestaudio --download-archive ~/Videos/$channelname4/.$channelname4 --merge-output-format mkv https://www.youtube.com/channel/$channelid5 || $(
+yt-dlp -f bestvideo+bestaudio --download-archive ~/Videos/$channelname4/.$channelname4 --merge-output-format mkv https://www.youtube.com/channel/$channelid5 || $(
 curl https://www.youtube.com/feeds/videos.xml?channel_id=$channelid5 | grep yt:videoId | sed -e 's/<\/*yt:videoId>//g' -e 's/ //g' > .ids.txt
 find * | sed 's/....$//g' | grep -o '.\{11\}$' > .local.txt
 missing=$(comm -23 <(sort .ids.txt) <(sort .local.txt))
@@ -88,7 +88,7 @@ for dlvideo in $missing; do
 	ytdl -a -o audio $dlvideo
 	ytdl -b -o video $dlvideo
 	ffmpeg -i video.mp4 -i audio.mp4 -c:v copy -c:a copy output.mp4
-	title=$(youtube-dl -e $dlvideo | sed -e 's/ /_/g' -e 's/\///g')
+	title=$(yt-dlp -e $dlvideo | sed -e 's/ /_/g' -e 's/\///g')
 	mv output.mp4 $title-$dlvideo.mp4
 	rm video.mp4 && rm audio.mp4
 	echo "youtube $dlvideo" >> .$channelname4

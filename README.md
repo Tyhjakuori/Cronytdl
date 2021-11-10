@@ -11,33 +11,36 @@ You will need the following to use this properly :
 * ffmpeg
 * base-devel
 * coreutils
-* youtube-dl
+* ~~youtube-dl~~
+* yt-dlp
 * pafy
 
-Youtube-dl you can find here:   
-https://github.com/ytdl-org/youtube-dl   
+~~Youtube-dl you can find here:~~   
+~~https://github.com/ytdl-org/youtube-dl~~   
+yt-dlp you can find here:    
+https://github.com/yt-dlp/yt-dlp    
 Pafy here:   
 https://github.com/mps-youtube/pafy   
 
-On linux you can install youtube-dl via command line or package manager.   
+On linux you can install yt-dlp via command line or package manager.   
 I prefer first aproach
 ```
-sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-sudo chmod a+rx /usr/local/bin/youtube-dl
+sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp
 ```
 OR
 ```
-sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
-sudo chmod a+rx /usr/local/bin/youtube-dl
+sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp
 ```
-(source youtube-dl github page)
+(source yt-dlp [github page](https://github.com/yt-dlp/yt-dlp#installation))
 
 And pafy i got from AUR
 ```
 https://aur.archlinux.org/packages/python-pafy-git/
 ```
 
-Reason i'm using both is that pafy is there as a failsafe option. Sometimes youtube-dl fails to download due to error or content behind age-gate, but pafy seems to be able to download those videos most of the time.
+Reason i'm using both is that pafy is there as a failsafe option.
 
 ## Usage
 
@@ -48,7 +51,7 @@ Or you can use the perl script, more info about that below.
 I use this with cron as the name suggest.   
 Cronjob looks like this 
 ```
- @hourly /bin/sh /home/username/Documents/Bash/cronytdl >> /home/username/Documents/Bash/logs/cronytdl.log
+ @hourly /bin/sh /home/username/Documents/Bash/cronytdl >> /home/username/Documents/Bash/logs/cronytdl.log 2>&1
 ```
 I make it keep a log for me, so i can regularly check everything is working correctly.   
 But it works well using it via command line too.
@@ -63,6 +66,7 @@ To include your username and they need to be in same directory to work properly
 
 ## Sources
 
-youtube-dl https://github.com/ytdl-org/youtube-dl    
+~~youtube-dl https://github.com/ytdl-org/youtube-dl~~    
+yt-dlp https://github.com/yt-dlp/yt-dlp   
 pafy https://github.com/mps-youtube/pafy, https://aur.archlinux.org/packages/python-pafy-git/
 
