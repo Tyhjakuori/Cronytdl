@@ -11,12 +11,9 @@ You will need the following to use this properly :
 * ffmpeg
 * base-devel
 * coreutils
-* ~~youtube-dl~~
 * yt-dlp
 * pafy
-
-~~Youtube-dl you can find here:~~   
-~~https://github.com/ytdl-org/youtube-dl~~   
+ 
 yt-dlp you can find here:    
 https://github.com/yt-dlp/yt-dlp    
 Pafy here:   
@@ -65,8 +62,7 @@ my $dir = "/home/_username_/Videos/$channelname";
 To include your username and they need to be in same directory to work properly
 
 ## Sources
-
-~~youtube-dl https://github.com/ytdl-org/youtube-dl~~    
+   
 yt-dlp https://github.com/yt-dlp/yt-dlp   
 pafy https://github.com/mps-youtube/pafy, https://aur.archlinux.org/packages/python-pafy-git/
 
