@@ -55,11 +55,11 @@ But it works well using it via command line too.
     
 I have added a perl script to make adding new channels to the file easier.   
 You will need to provide it channelname and channelid.   
-You will need to replace following:
+You also will need to add your username between the paranthesis:
 ```
-my $dir = "/home/_username_/Videos/$channelname";
+my $username = "MyUsernameHere";
 ```
-To include your username and they need to be in same directory to work properly
+Perl script and cronytdl need to be in same directory to work properly.
 
 ## Sources
    
